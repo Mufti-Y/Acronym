@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>2DBD1F4A-5F96-478B-A889-8922C79DA105</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Acronym</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C21B413339AAA7AA60B9F831594D74E6223A2869</key>
+		<string>github.com:Mufti-Y/Acronym.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Acronym.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C21B413339AAA7AA60B9F831594D74E6223A2869</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:Mufti-Y/Acronym.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C21B413339AAA7AA60B9F831594D74E6223A2869</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C21B413339AAA7AA60B9F831594D74E6223A2869</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Acronym</string>
+		</dict>
+	</array>
+</dict>
+</plist>
