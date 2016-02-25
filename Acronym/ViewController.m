@@ -7,17 +7,17 @@
 //
 
 #import "ViewController.h"
-#import "AFNetworking.h"
 #import "MBProgressHUD.h"
-
-static NSString * const BaseURLString = @"http://www.nactem.ac.uk/software/acromine/dictionary.py";
+#import "DataHelper.h"
+#import "FullForm.h"
 
 @interface ViewController () {
     MBProgressHUD *HUD;
 }
 
 @property (nonatomic, strong) NSString *acronym;
-@property (nonatomic, strong) NSArray *responseArray, *longFormArray;
+@property (nonatomic, strong) NSArray *responseArray, *fullFormArray; //contains parsed array of fullForms
+@property (nonatomic, strong) FullFormManager *fullFormManager;
 
 @end
 
@@ -28,6 +28,9 @@ static NSString * const BaseURLString = @"http://www.nactem.ac.uk/software/acrom
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero]; //clears bottom rows
     HUD = [[MBProgressHUD alloc] initWithView:self.view];
     [self.view addSubview:HUD];
+    self.fullFormManager = [[FullFormManager alloc] init];
+    self.fullFormManager.delegate = self;
+    
 }
 
 #pragma mark - UITableView Delegate Methods
@@ -36,12 +39,13 @@ static NSString * const BaseURLString = @"http://www.nactem.ac.uk/software/acrom
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"cellItem"];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cellItem"];
-        //cell.textLabel.textColor = [UIColor whiteColor];
         cell.backgroundColor = [UIColor clearColor];
     }
     
-    if (self.longFormArray) {
-        cell.textLabel.text  = [[self.longFormArray objectAtIndex:indexPath.row] objectForKey:@"lf"];
+    if (self.fullFormArray) {
+        FullForm *fullForm = [[FullForm alloc] init];
+        fullForm = [self.fullFormArray objectAtIndex:indexPath.row];
+        cell.textLabel.text  = fullForm.longForm;
     }
     
     return cell;
@@ -49,9 +53,8 @@ static NSString * const BaseURLString = @"http://www.nactem.ac.uk/software/acrom
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-    if (self.responseArray) {
-        self.longFormArray = [[self.responseArray firstObject] objectForKey:@"lfs"];
-        return [self.longFormArray count];
+    if (self.fullFormArray) {
+        return [self.fullFormArray count];
     }
     
     return 0;
@@ -72,31 +75,17 @@ static NSString * const BaseURLString = @"http://www.nactem.ac.uk/software/acrom
 #pragma mark - Data Handling
 
 -(void) loadData {
-    //make the api call
-    
-    NSString *urlString = [NSString stringWithFormat:@"%@?sf=%@",BaseURLString,self.acronym];
-    NSURL *url = [NSURL URLWithString:urlString];
-    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    operation.responseSerializer = [AFJSONResponseSerializer serializer];
     
     [HUD showAnimated:YES];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        NSLog(@"Request Succeeded");
-        [HUD hideAnimated:YES];
-        self.responseArray = (NSArray *)responseObject;
-        [self.tableView reloadData];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        NSLog(@"Request Failed");
-        [HUD hideAnimated:YES];
-    }];
-    
-    [operation start];
-    NSLog(@"Request URL: %@",urlString);
+    [self.fullFormManager loadDataWithQuery:self.acronym];
+}
+
+#pragma mark - FullFormManagerDelegate Methods
+
+-(void)newDataDidLoad:(NSArray *)longFormArray {
+    self.fullFormArray = [longFormArray copy];
+    [HUD hideAnimated:YES];
+    [self.tableView reloadData];
 }
 
 @end

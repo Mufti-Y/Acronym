@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FullFormManager.h"
 
-@interface ViewController : UIViewController <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface ViewController : UIViewController <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, FullFormManagerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *textField;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
