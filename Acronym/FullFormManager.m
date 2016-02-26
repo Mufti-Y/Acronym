@@ -55,7 +55,9 @@ static NSString * const BaseURLString = @"http://www.nactem.ac.uk/software/acrom
             }
             
         } andFailureBlock:^(NSError *error) {
-            //
+            if ([self.delegate respondsToSelector:@selector(newDataFailedToLoad:)]) {
+                [self.delegate newDataFailedToLoad:error];
+            }
         }];
     }
 }

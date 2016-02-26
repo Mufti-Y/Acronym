@@ -20,6 +20,7 @@
  */
 
 -(void)newDataDidLoad:(NSArray *)longFormArray;
+-(void)newDataFailedToLoad:(NSError *)error;
 
 @end
 
