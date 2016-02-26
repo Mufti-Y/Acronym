@@ -32,8 +32,8 @@
 		83B3D13A1C75B7F7000992E0 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B3D1281C75B7F7000992E0 /* UIRefreshControl+AFNetworking.m */; };
 		83B3D13B1C75B7F7000992E0 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B3D12A1C75B7F7000992E0 /* UIWebView+AFNetworking.m */; };
 		83B3D13E1C75E46A000992E0 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 83B3D13D1C75E46A000992E0 /* MBProgressHUD.m */; };
+		83C44D5E1C80AFC0007173CC /* FullForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C44D5D1C80AFC0007173CC /* FullForm.m */; };
 		83E92FED1C7F8BBF00C1EA87 /* DataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E92FEC1C7F8BBF00C1EA87 /* DataHelper.m */; };
-		83E92FF01C7F8DB300C1EA87 /* FullForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E92FEF1C7F8DB300C1EA87 /* FullForm.m */; };
 		83E92FF31C7FB7AD00C1EA87 /* FullFormManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 83E92FF21C7FB7AD00C1EA87 /* FullFormManager.m */; };
 /* End PBXBuildFile section */
 
@@ -99,10 +99,10 @@
 		83B3D12A1C75B7F7000992E0 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		83B3D13C1C75E46A000992E0 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		83B3D13D1C75E46A000992E0 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		83C44D5C1C80AFC0007173CC /* FullForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullForm.h; sourceTree = "<group>"; };
+		83C44D5D1C80AFC0007173CC /* FullForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullForm.m; sourceTree = "<group>"; };
 		83E92FEB1C7F8BBF00C1EA87 /* DataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataHelper.h; sourceTree = "<group>"; };
 		83E92FEC1C7F8BBF00C1EA87 /* DataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataHelper.m; sourceTree = "<group>"; };
-		83E92FEE1C7F8DB300C1EA87 /* FullForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FullForm.h; path = ../FullForm.h; sourceTree = "<group>"; };
-		83E92FEF1C7F8DB300C1EA87 /* FullForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FullForm.m; path = ../FullForm.m; sourceTree = "<group>"; };
 		83E92FF11C7FB7AD00C1EA87 /* FullFormManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullFormManager.h; sourceTree = "<group>"; };
 		83E92FF21C7FB7AD00C1EA87 /* FullFormManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullFormManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -148,8 +148,8 @@
 			children = (
 				83E92FEB1C7F8BBF00C1EA87 /* DataHelper.h */,
 				83E92FEC1C7F8BBF00C1EA87 /* DataHelper.m */,
-				83E92FEE1C7F8DB300C1EA87 /* FullForm.h */,
-				83E92FEF1C7F8DB300C1EA87 /* FullForm.m */,
+				83C44D5C1C80AFC0007173CC /* FullForm.h */,
+				83C44D5D1C80AFC0007173CC /* FullForm.m */,
 				83E92FF11C7FB7AD00C1EA87 /* FullFormManager.h */,
 				83E92FF21C7FB7AD00C1EA87 /* FullFormManager.m */,
 				8352FCA01C75A0BC00FC4929 /* ViewController.h */,
@@ -344,7 +344,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				83E92FF01C7F8DB300C1EA87 /* FullForm.m in Sources */,
 				83B3D12B1C75B7F7000992E0 /* AFHTTPRequestOperation.m in Sources */,
 				83B3D1381C75B7F7000992E0 /* UIImageView+AFNetworking.m in Sources */,
 				8352FCA21C75A0BC00FC4929 /* ViewController.m in Sources */,
@@ -358,6 +357,7 @@
 				83E92FED1C7F8BBF00C1EA87 /* DataHelper.m in Sources */,
 				83B3D1351C75B7F7000992E0 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				83B3D12F1C75B7F7000992E0 /* AFSecurityPolicy.m in Sources */,
+				83C44D5E1C80AFC0007173CC /* FullForm.m in Sources */,
 				83B3D13A1C75B7F7000992E0 /* UIRefreshControl+AFNetworking.m in Sources */,
 				83B3D13B1C75B7F7000992E0 /* UIWebView+AFNetworking.m in Sources */,
 				83B3D13E1C75E46A000992E0 /* MBProgressHUD.m in Sources */,
