@@ -88,4 +88,10 @@
     [self.tableView reloadData];
 }
 
+-(void)newDataFailedToLoad:(NSError *)error {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Failed" message:@"Unable to fetch data from the server" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [HUD hideAnimated:YES];
+    [alert show];
+}
+
 @end
